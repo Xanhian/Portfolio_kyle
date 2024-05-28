@@ -1,0 +1,21 @@
+.border-gradient {
+    border: 5px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+}
+
+.border-left {
+   
+    border-image-source: linear-gradient(150deg, rgb(195, 231, 248) 0%, rgba(0, 0, 0, 0) 45%);
+}
+
+.border-right {
+    border-image-source: linear-gradient(-150deg, rgb(195, 231, 248) 0%, rgba(0, 0, 0, 0) 45%);
+}
+
+.border-center {
+    border-top: 0;
+    border-image-source:linear-gradient(90deg, rgba(0, 0, 0, 0) 7%, rgba(195,
+        231,
+        248) 50%, rgba(195, 231, 248, 0) 93%);
+}
