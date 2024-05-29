@@ -4,22 +4,18 @@ import React, { useState ,useRef, useEffect } from 'react';
 import './index.css'; // Import custom CSS file
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrambleTextPlugin } from 'gsap-trial/all';
 import { useScramble } from "use-scramble";
 
 const Index = () => {
   const [index, setIndex] = useState(0);
-
   const box = useRef();
   const [animation, setAnimation] = useState(null); // State to store animation instance
   const { contextSafe } = useGSAP();
-
   const onEnter = contextSafe(() => {
     if (animation) {
       animation.play();
     }
     console.log(animation);
-  
   });
 
   const onLeave = contextSafe(() => {
@@ -78,9 +74,8 @@ const landingText = [
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex(prevIndex => (prevIndex + 1) % landingText.length);
-    }, 1800); // Change text every 2000 milliseconds (2 seconds)
+    }, 1800); 
 
-    // Clear interval on component unmount to prevent memory leaks
     return () => clearInterval(intervalId);
   }, []);
 
